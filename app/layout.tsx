@@ -18,7 +18,7 @@ export default function RootLayout({
       <body className={"relative"}>
         <NavBar />
         {children}
-        {/* <Footer /> */}
+        <Footer />
       </body>
     </html>
   );
