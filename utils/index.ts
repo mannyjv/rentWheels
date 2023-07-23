@@ -3,7 +3,7 @@ import axios from "axios";
 
 export async function fetchCars(params: any = { model: "corolla" }) {
   const headers = {
-    "X-RapidAPI-Key": "16e57c0df1msh015c9bdfab5984ep124f14jsn4f03e1a7ad04",
+    "X-RapidAPI-Key": process.env.RAPID_API_KEY || "",
     "X-RapidAPI-Host": "cars-by-api-ninjas.p.rapidapi.com",
   };
   const options = {

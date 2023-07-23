@@ -5,6 +5,7 @@ import Image from "next/image";
 //Next.js allows you to set component as asynchronous
 export default async function Home() {
   const allCars = await fetchCars();
+  console.log(allCars[0]);
   const isCarDataEmpty =
     !Array.isArray(allCars) || allCars.length < 1 || !allCars;
   //if you do a simple console log without specify that this component is a client component,

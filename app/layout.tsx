@@ -1,3 +1,4 @@
+require("dotenv").config();
 import { relative } from "path";
 import "./globals.css";
 import type { Metadata } from "next";

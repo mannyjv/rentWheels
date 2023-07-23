@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import Image from "next/image";
 import { CarProps } from "@/types";
 import { calculateCarRent } from "@/utils";
-import CustomButton from "./CustomButton";
+import { CustomButton, CarDetails } from "./";
 
 interface CarCardProps {
   car: CarProps;
@@ -61,8 +61,8 @@ const CarCard = ({ car }: CarCardProps) => {
           <div className="flex flex-col justify-center items-center gap-2">
             <Image
               src="/gas.svg"
-              width={20}
               height={20}
+              width={20}
               alt="miles per gallon"
             />
             <p className="text-[14px]">{city_mpg} MPG</p>
@@ -79,6 +79,12 @@ const CarCard = ({ car }: CarCardProps) => {
           />
         </div>
       </div>
+
+      <CarDetails
+        isOpen={isOpen}
+        closeModal={() => setIsOpen(false)}
+        car={car}
+      />
     </div>
   );
 };
