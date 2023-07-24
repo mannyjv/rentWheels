@@ -1,9 +1,9 @@
 //code to use rapidApis cars api - reusable utility function
-import { CarProps } from "@/types";
+import { CarProps, FilterProps } from "@/types";
 import axios from "axios";
 
 export async function fetchCars(
-  params: any = { model: "corolla" }
+  params: FilterProps
 ): Promise<CarProps[] | string> {
   const headers = {
     "X-RapidAPI-Key": process.env.NEXT_PUBLIC_RAPID_API_KEY || "",

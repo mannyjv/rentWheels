@@ -2,9 +2,18 @@ import { CarCard, CustomFilter, Hero, SearchBar } from "@/components";
 import { fetchCars } from "@/utils";
 import Image from "next/image";
 
+//next.js allows for extracting all the search params straight from the props of a specific page
+//will update when search params update
+
 //Next.js allows you to set component as asynchronous
-export default async function Home() {
-  const allCars = await fetchCars();
+export default async function Home({ searchParams }: any) {
+  const allCars = await fetchCars({
+    make: searchParams.manufacturer || "",
+    year: searchParams.year || 2022,
+    fuel: searchParams.fuel || "",
+    limit: searchParams.limit || 10,
+    model: searchParams.model || "",
+  });
 
   const isCarDataEmpty =
     !Array.isArray(allCars) || allCars.length < 1 || !allCars;
