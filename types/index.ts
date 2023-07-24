@@ -40,7 +40,7 @@ export interface CarDetailsProps {
 export interface FilterProps {
   make: string;
   year: number;
-  fuel: string;
+  fuel_type: string;
   limit: number;
   model: string;
 }

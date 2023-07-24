@@ -11,8 +11,8 @@ export default async function Home({ searchParams }: any) {
   const allCars = await fetchCars({
     make: searchParams.manufacturer || "",
     year: searchParams.year || 2022,
-    fuel: searchParams.fuel || "",
-    limit: searchParams.limit || 10,
+    fuel_type: searchParams.fuel || "",
+    limit: searchParams.limit || 5,
     model: searchParams.model || "",
   });
 
