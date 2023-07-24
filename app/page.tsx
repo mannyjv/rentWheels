@@ -5,9 +5,10 @@ import Image from "next/image";
 //Next.js allows you to set component as asynchronous
 export default async function Home() {
   const allCars = await fetchCars();
-  console.log(allCars[0]);
+
   const isCarDataEmpty =
     !Array.isArray(allCars) || allCars.length < 1 || !allCars;
+
   //if you do a simple console log without specify that this component is a client component,
   //then by default all components/page in next.js will be server side component- so the fetchCars func is execute by server and not by browser
   //so log shows up in terminal in vscode and not in browser console.
@@ -42,7 +43,7 @@ export default async function Home() {
             <div className="home__error-container">
               <h2 className="text-black text-xl font-bold">
                 Oops... no results found.
-                <p>{allCars?.message}</p>
+                {typeof allCars === "string" && <p>{allCars}</p>}
               </h2>
             </div>
           )}

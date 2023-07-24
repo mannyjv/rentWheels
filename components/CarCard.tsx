@@ -2,7 +2,7 @@
 import React, { useState } from "react";
 import Image from "next/image";
 import { CarProps } from "@/types";
-import { calculateCarRent } from "@/utils";
+import { calculateCarRent, generateCarImageUrl } from "@/utils";
 import { CustomButton, CarDetails } from "./";
 
 interface CarCardProps {
@@ -30,7 +30,8 @@ const CarCard = ({ car }: CarCardProps) => {
       <div className="relative w-full h-40 my-3 object-contain">
         {/* priority will make it load first - with 'fill', dont need width and height*/}
         <Image
-          src="/hero.png"
+          src={generateCarImageUrl(car)}
+          key={`idxdefaultimage`}
           alt="car model"
           fill
           priority
