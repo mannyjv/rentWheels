@@ -7,6 +7,9 @@ import { Footer, NavBar } from "@/components";
 export const metadata: Metadata = {
   title: "Car Hub",
   description: "Discover what kind of car you can drive today.",
+  icons: {
+    icon: "/car-favicon.png",
+  },
 };
 
 export default function RootLayout({
