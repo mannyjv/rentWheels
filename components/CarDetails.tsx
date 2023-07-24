@@ -7,7 +7,7 @@ import { Dialog, Transition } from "@headlessui/react"; //dialog for modal, tran
 import { CarDetailsProps } from "@/types";
 import { generateCarImageUrl } from "@/utils";
 
-const CarDetails = ({ isOpen, closeModal, car, idx }: CarDetailsProps) => {
+const CarDetails = ({ isOpen, closeModal, car }: CarDetailsProps) => {
   return (
     <>
       <Transition appear show={isOpen} as={Fragment}>
